@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,6 +12,6 @@ namespace LHBOL
         public int Id { get; set; }
         public string UserEmail { get; set; }
         public string Password { get; set; }
-        public IEquatable<URLs> URLs { get; set; }
+        public IEnumerable<URLs> URLs { get; set; }
     }
 }
