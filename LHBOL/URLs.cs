@@ -19,7 +19,7 @@ namespace LHBOL
         public bool IsApproved { get; set; }
 
         [ForeignKey("User")]
-        public User Id { get; set; }
+        public User UserId { get; set; }
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
