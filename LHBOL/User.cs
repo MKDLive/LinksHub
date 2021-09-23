@@ -1,11 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LHBOL
 {
+    [Table("User")]
     public class User
     {
-        public int UserId { get; set; }
+        [Key]
+        public int Id { get; set; }
         public string UserEmail { get; set; }
         public string Password { get; set; }
+        public IEquatable<URLs> URLs { get; set; }
     }
 }
