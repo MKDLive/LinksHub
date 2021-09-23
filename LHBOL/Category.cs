@@ -16,6 +16,6 @@ namespace LHBOL
         public string CategoryName { get; set; }
         public string Description { get; set; }
 
-        public IEquatable<URLs> URLs { get; set; }
+        public IEnumerable<URLs> URLs { get; set; }
     }
 }
