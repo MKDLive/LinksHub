@@ -7,7 +7,7 @@ using LHBOL;
 
 namespace LHDAL
 {
-    public interface ICategoryDb
+    interface ICategoryDb
     {
         IEnumerable<Category> GetAllCategory();
         Category GetCategoryById(int Id);
