@@ -19,7 +19,7 @@ namespace LHBLL
     }
     public class UserBL : IUserBL
     {
-        UserDb userDb;
+        readonly UserDb userDb;
         public UserBL()
         {
             userDb = new UserDb();

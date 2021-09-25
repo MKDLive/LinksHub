@@ -19,7 +19,7 @@ namespace LHBLL
     }
     public class URLsBL : IURLsBL
     {
-        URLsDb urlDb;
+        readonly URLsDb urlDb;
         public URLsBL()
         {
             urlDb = new URLsDb();

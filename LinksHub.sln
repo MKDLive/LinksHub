@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LHDAL", "LHDAL\LHDAL.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHBLL", "LHBLL\LHBLL.csproj", "{5A7BA5A1-6418-4F58-B63C-9D2E7EABB85A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHUI", "LHUI\LHUI.csproj", "{2115CCE5-C983-41F6-9452-71F48C3DC3B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5A7BA5A1-6418-4F58-B63C-9D2E7EABB85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A7BA5A1-6418-4F58-B63C-9D2E7EABB85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A7BA5A1-6418-4F58-B63C-9D2E7EABB85A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2115CCE5-C983-41F6-9452-71F48C3DC3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2115CCE5-C983-41F6-9452-71F48C3DC3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2115CCE5-C983-41F6-9452-71F48C3DC3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2115CCE5-C983-41F6-9452-71F48C3DC3B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,7 +18,7 @@ namespace LHDAL
     }
     public class UserDb
     {
-            LHDBContext lhDbContext;
+             readonly LHDBContext lhDbContext;
             public UserDb()
             {
                 lhDbContext = new LHDBContext();

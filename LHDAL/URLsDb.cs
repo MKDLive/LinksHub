@@ -18,7 +18,7 @@ namespace LHDAL
     }
     public class URLsDb : IURLsDb
     {
-        LHDBContext lhDbContext;
+        readonly LHDBContext lhDbContext;
         public URLsDb()
         {
             lhDbContext = new LHDBContext();
