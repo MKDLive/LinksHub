@@ -5,7 +5,7 @@ using LHDAL;
 
 namespace LHBLL
 {
-    interface ICategoryBL
+    public interface ICategoryBL
     {
         IEnumerable<Category> GetAllCategory();
         Category GetCategoryById(int Id);
@@ -16,9 +16,9 @@ namespace LHBLL
     public class CategoryBL : ICategoryBL
     {
         readonly CategoryDb categoryDb;
-        public CategoryBL()
+        public CategoryBL(CategoryDb _categoryDb)
         {
-            categoryDb = new CategoryDb();
+            categoryDb = _categoryDb;
         }
         public bool CreateCategory(Category category)
         {

@@ -11,9 +11,16 @@ namespace LHUI.Controllers
     public class CategoriesController : Controller
     {
         readonly CategoryBL objCategoryBll;
-        public CategoriesController()
+
+        //public CategoriesController()
+        //{
+        //    objCategoryBll = new CategoryBL();
+        //}
+
+        //Dependency Injection
+        public CategoriesController(CategoryBL _objCategoryBll)
         {
-            objCategoryBll = new CategoryBL();
+            objCategoryBll = _objCategoryBll;
         }
         public IActionResult Index()
         {

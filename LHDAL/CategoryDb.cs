@@ -18,9 +18,9 @@ namespace LHDAL
     public class CategoryDb : ICategoryDb
     {
         readonly LHDBContext lhDbContext;
-        public CategoryDb()
+        public CategoryDb(LHDBContext _lhDbContext)
         {
-            lhDbContext = new LHDBContext();
+            lhDbContext = _lhDbContext;
         }
         public bool CreateCategory(Category category)
         {

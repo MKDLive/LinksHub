@@ -1,3 +1,5 @@
+using LHBLL;
+using LHDAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
@@ -23,6 +25,15 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region BLL Services
+            services.AddTransient<ICategoryBL, CategoryBL>();
+            #endregion //Dependency Injection package creats an object of CategoryBL class and injects it to CategoryController ctor
+            
+            #region DAL Services
+            services.AddTransient<CategoryDb, CategoryDb>(); 
+            #endregion
+            
+            services.AddDbContext<LHDBContext>();
             services.AddRazorPages();
             services.AddMvc();
         }
