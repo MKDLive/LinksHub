@@ -8,7 +8,7 @@ using LHDAL;
 
 namespace LHBLL
 {
-    interface IURLsBL
+   public interface IURLsBL
     {
         IEnumerable<URLs> GetAllURLs();
         URLs GetURLById(int urlId);
@@ -19,10 +19,10 @@ namespace LHBLL
     }
     public class URLsBL : IURLsBL
     {
-        readonly URLsDb urlDb;
-        public URLsBL()
+        readonly IURLsDb urlDb;
+        public URLsBL(IURLsDb _urlDb)
         {
-            urlDb = new URLsDb();
+            urlDb = _urlDb;
         }
         public bool CreateURL(URLs url)
         {

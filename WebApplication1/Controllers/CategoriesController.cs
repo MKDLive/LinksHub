@@ -10,7 +10,7 @@ namespace LHUI.Controllers
 {
     public class CategoriesController : Controller
     {
-        readonly CategoryBL objCategoryBll;
+        readonly ICategoryBL objCategoryBll;
 
         //public CategoriesController()
         //{
@@ -18,7 +18,7 @@ namespace LHUI.Controllers
         //}
 
         //Dependency Injection
-        public CategoriesController(CategoryBL _objCategoryBll)
+        public CategoriesController(ICategoryBL _objCategoryBll)
         {
             objCategoryBll = _objCategoryBll;
         }

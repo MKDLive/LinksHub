@@ -7,11 +7,16 @@
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.4.1" />
     <PackageReference Include="jquery" Version="3.3.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LHBLL\LHBLL.csproj" />
     <ProjectReference Include="..\LHBOL\LHBOL.csproj" />
+    <ProjectReference Include="..\LHDAL\LHDAL.csproj" />
   </ItemGroup>
 
 </Project>

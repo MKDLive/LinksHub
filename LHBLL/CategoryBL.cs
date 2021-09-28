@@ -15,8 +15,8 @@ namespace LHBLL
     }
     public class CategoryBL : ICategoryBL
     {
-        readonly CategoryDb categoryDb;
-        public CategoryBL(CategoryDb _categoryDb)
+        readonly ICategoryDb categoryDb;
+        public CategoryBL(ICategoryDb _categoryDb)
         {
             categoryDb = _categoryDb;
         }

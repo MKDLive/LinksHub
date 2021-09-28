@@ -7,7 +7,7 @@ using LHBOL;
 
 namespace LHDAL
 {
-    interface IURLsDb
+    public interface IURLsDb
     {
         IEnumerable<URLs> GetAllURLs();
         URLs GetURLById(int urlId);
@@ -19,9 +19,9 @@ namespace LHDAL
     public class URLsDb : IURLsDb
     {
         readonly LHDBContext lhDbContext;
-        public URLsDb()
+        public URLsDb(LHDBContext _lhDbContext)
         {
-            lhDbContext = new LHDBContext();
+            lhDbContext = _lhDbContext;
         }
 
         public bool CreateURL(URLs url)

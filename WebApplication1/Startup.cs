@@ -3,6 +3,7 @@ using LHDAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -15,25 +16,31 @@ namespace WebApplication1
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.RegisterBLLServices();
             #region BLL Services
             services.AddTransient<ICategoryBL, CategoryBL>();
-            #endregion //Dependency Injection package creats an object of CategoryBL class and injects it to CategoryController ctor
-            
-            #region DAL Services
-            services.AddTransient<CategoryDb, CategoryDb>(); 
+            services.AddTransient<IURLsBL, URLsBL>();
+            services.AddTransient<IUserBL, UserBL>();
+            //Dependency Injection package creats an object of CategoryBL class and injects it to CategoryController ctor 
             #endregion
-            
-            services.AddDbContext<LHDBContext>();
+
+
+            #region DAL Services
+            services.AddTransient<ICategoryDb, CategoryDb>();
+            services.AddTransient<IURLsDb, URLsDb>();
+            services.AddTransient<IUserDb, UserDb>(); 
+            #endregion
+
+            services.AddDbContext<LHDBContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("LHConString")));
             services.AddRazorPages();
             services.AddMvc();
         }

@@ -8,7 +8,7 @@ using LHDAL;
 
 namespace LHBLL
 {
-    interface IUserBL
+    public interface IUserBL
     {
         IEnumerable<User> GetAllUser();
         User GetUserById(int userId);
@@ -19,10 +19,10 @@ namespace LHBLL
     }
     public class UserBL : IUserBL
     {
-        readonly UserDb userDb;
-        public UserBL()
+        readonly IUserDb userDb;
+        public UserBL(IUserDb _userDb)
         {
-            userDb = new UserDb();
+            userDb = _userDb;
         }
         public bool CreateUser(User user)
         {

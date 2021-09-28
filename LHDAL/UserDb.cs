@@ -7,7 +7,7 @@ using LHBOL;
 
 namespace LHDAL
 {
-    interface IUserDb
+    public interface IUserDb
     {
         IEnumerable<User> GetAllUser();
         User GetUserById(int userId);
@@ -16,12 +16,12 @@ namespace LHDAL
         bool DeleteUser(int userId);
 
     }
-    public class UserDb
+    public class UserDb : IUserDb
     {
-             readonly LHDBContext lhDbContext;
-            public UserDb()
+            readonly LHDBContext lhDbContext;
+            public UserDb(LHDBContext _lhDbContext)
             {
-                lhDbContext = new LHDBContext();
+                lhDbContext = _lhDbContext;
             }
 
             public bool CreateUser(User user)
