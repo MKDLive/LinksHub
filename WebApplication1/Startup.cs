@@ -1,7 +1,9 @@
 using LHBLL;
+using LHBOL;
 using LHDAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -41,6 +43,9 @@ namespace WebApplication1
             #endregion
 
             services.AddDbContext<LHDBContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("LHConString")));
+
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<LHDBContext>().AddDefaultTokenProviders();
+
             services.AddRazorPages();
             services.AddMvc();
         }
@@ -59,7 +64,7 @@ namespace WebApplication1
 
             app.UseStaticFiles();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

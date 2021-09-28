@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using LHBOL;
 using LHBLL;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LHUI.Controllers
 {
+    //[Authorize]
     public class CategoriesController : Controller
     {
         readonly ICategoryBL objCategoryBll;
